@@ -10,6 +10,12 @@ class Guru extends Model
     use HasFactory;
     protected $guarded = ["id"];
 
+
+    public function mengajar()
+    {
+        return $this->hasMany(Pengajaran::class, 'kode_guru', 'kode_guru');
+    }
+
     public function dataDummy()
     {
         $guru = [
